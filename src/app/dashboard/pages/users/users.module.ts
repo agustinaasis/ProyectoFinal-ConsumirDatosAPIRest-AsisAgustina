@@ -7,9 +7,6 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
 
 
 
-
-
-
 @NgModule({
   declarations: [UsersComponent, UsersDialogComponent, UsersTableComponent ],
   imports: [CommonModule, SharedModule, ],

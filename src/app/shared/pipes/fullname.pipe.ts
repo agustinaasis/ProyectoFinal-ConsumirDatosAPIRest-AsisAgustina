@@ -9,7 +9,7 @@ export class FullnamePipe implements PipeTransform {
 
   transform ( value: User, ...args: unknown[] ): unknown {
     const firstArg = args [0];
-    const result = `${value.name} ${value.lastName}`;
+    const result = `${value.lastName} ${', '} ${value.name}`;
 
     switch (firstArg){
       case 'lowercase':
