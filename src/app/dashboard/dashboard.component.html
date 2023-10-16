@@ -1,15 +1,23 @@
 
 <mat-toolbar color="primary">
-    <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon style="padding: 10px; width: 50px; height: 30px;"> group </mat-icon>
-        <p> Ingresar </p>
-    </button>
-</mat-toolbar>
 
+    <button type="button" mat-button (click)="drawer.toggle()">
+        
+        <mat-icon style="padding: 10px; width: 50px; height: 30px;"> menu </mat-icon>
+        <p> Menú  </p>
+
+    </button>
+
+</mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-        <app-users> </app-users>
+        <app-users> 
+            <button type="button" mat-button (click)="drawer.toggle()">
+                <mat-icon style="padding: 10px; width: 50px; height: 30px;"> group </mat-icon>
+                <p> Ingresar </p>
+            </button> 
+    </app-users>
     </mat-drawer>
     <div class="example-sidenav-content">
 
@@ -18,4 +26,3 @@
 </div>
     </div>
 </mat-drawer-container>
-
