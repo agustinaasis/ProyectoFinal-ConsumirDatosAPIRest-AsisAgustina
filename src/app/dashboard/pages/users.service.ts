@@ -45,11 +45,6 @@ private sendNotification$ = new Subject <string>();
 private users$ = new BehaviorSubject <User[]> ([]);
 
 
-  sendNotification(notification: string) : void {
-    this.sendNotification$.next(notification)
-}
-  
-
   loadUsers(): void {
     this.users$.next(this.users)
   }

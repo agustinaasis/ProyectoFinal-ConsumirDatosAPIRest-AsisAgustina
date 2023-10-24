@@ -9,11 +9,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeModule } from './pages/home/home.module';
+import { NumberListComponent } from './pages/number-list/number-list.component';
 
 
 
 @NgModule({
-  declarations: [ DashboardComponent],
+  declarations: [ DashboardComponent, NumberListComponent],
   imports: [ CommonModule,
             MatSidenavModule,
             MatButtonModule,
