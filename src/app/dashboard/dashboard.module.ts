@@ -8,6 +8,7 @@ import { FormsModule } from './pages/forms/forms.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
+import { HomeModule } from './pages/home/home.module';
 
 
 
@@ -21,6 +22,7 @@ import { SharedModule } from '../shared/shared.module';
             MatToolbarModule,
             UsersModule,
             SharedModule,
+            HomeModule,
             ],
 
   exports:[ DashboardComponent,],
