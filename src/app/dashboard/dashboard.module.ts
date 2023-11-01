@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MatListModule } from '@angular/material/list';
+import { CoursesModule } from './pages/courses/courses.module';
 
 
 
@@ -29,7 +30,8 @@ import { MatListModule } from '@angular/material/list';
             SharedModule,
             HomeModule,
             RouterModule,
-            MatListModule
+            MatListModule,
+            CoursesModule,
             ],
 
   exports:[ DashboardComponent,],

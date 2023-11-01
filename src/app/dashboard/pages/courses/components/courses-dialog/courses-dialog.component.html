@@ -1,0 +1,35 @@
+<h1 mat-dialog-title> Agregar curso </h1>
+
+<div mat-dialog-content>
+
+    <form class="row">
+
+        <div class="col-12">
+            <mat-form-field class="w-100">
+                <mat-label> Asígnale un ID al curso </mat-label>
+                <input [formControl] = "idControl" matInput/>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12">
+            <mat-form-field class="w-100">
+                <mat-label > Nombre del curso </mat-label>
+                <input [formControl] = "nameControl" matInput />
+            </mat-form-field>
+        </div>
+
+        <div class="col-12">
+            <mat-form-field class="w-100">
+                <mat-label > Duración </mat-label>
+                <input [formControl] = "lengthControl" matInput />
+            </mat-form-field>
+        </div>
+
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onSubmit()" > Guardar</button>
+    <button mat-button mat-dialog-close> Cancelar</button>
+</div>
