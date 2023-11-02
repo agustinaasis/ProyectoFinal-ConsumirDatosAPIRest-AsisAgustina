@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
+ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from './pages/forms/forms.module';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeModule } from './pages/home/home.module';
-import { NumberListComponent } from './pages/number-list/number-list.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -19,7 +18,7 @@ import { CoursesModule } from './pages/courses/courses.module';
 
 
 @NgModule({
-  declarations: [ DashboardComponent, NumberListComponent, ToolbarComponent, SidebarComponent, ],
+  declarations: [ DashboardComponent, ToolbarComponent, SidebarComponent, ],
   imports: [ CommonModule,
             MatSidenavModule,
             MatButtonModule,

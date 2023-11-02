@@ -17,7 +17,7 @@ courseForm = new FormGroup ({
 
     id: this.idControl,
     name: this.nameControl,
-    lenth: this.lengthControl,
+    length: this.lengthControl,
   });
 
   constructor(private matDialogRef: MatDialogRef<CoursesDialogComponent> ) { }

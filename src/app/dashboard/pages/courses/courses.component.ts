@@ -20,6 +20,8 @@ export class CoursesComponent {
     ){
     this.courses$ = this.coursesService.getCourses$();
   }
+
+
   addCourse(): void {
     this.matDialog.open(CoursesDialogComponent).afterClosed().subscribe({
       next: (result) => {
@@ -34,6 +36,7 @@ export class CoursesComponent {
     });
   }
 
+  
 
 
 }

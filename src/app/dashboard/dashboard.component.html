@@ -1,29 +1,20 @@
-<mat-toolbar color="primary">
-    
-    <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon> menu </mat-icon>
-        <p class="menu-text"> Menú </p>
-    </button> 
-    
-</mat-toolbar>
-
-
 <mat-drawer-container class="example-container" autosize>
 
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+    <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
+
+    <mat-drawer [opened]="showSidebar" #drawer class="example-sidenav" mode="side">
 
         <app-sidebar> </app-sidebar> 
+
         <router-outlet> </router-outlet>
 
     </mat-drawer>
 
-    <div class="example-sidenav-content">
+
+    <div class="example-content">
         <div class="container text-center">
             <a href=""> <img alt="logo" src="../assets/img/logo.png"> </a>
         </div>
-    </div>
-
-</mat-drawer-container>
-
-
-<app-number-list></app-number-list>
+    </div> 
+    
+</mat-drawer-container> 
