@@ -27,7 +27,14 @@
       
         <button (click)="deleteUser.emit(user.id)" mat-icon-button color="warn">
         <mat-icon>delete</mat-icon>
-      </button>
+        </button>
+
+        
+          <button (click)="goToDetail(user.id)" mat-icon-button color="accent">
+            <mat-icon>visibility</mat-icon>
+          </button>
+
+
     </td>
     </ng-container>
 

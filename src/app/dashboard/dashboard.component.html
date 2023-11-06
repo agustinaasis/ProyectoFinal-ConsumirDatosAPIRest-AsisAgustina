@@ -1,20 +1,17 @@
 <mat-drawer-container class="example-container" autosize>
 
-    <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
+    <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"> </app-toolbar>
 
     <mat-drawer [opened]="showSidebar" #drawer class="example-sidenav" mode="side">
 
         <app-sidebar> </app-sidebar> 
 
-        <router-outlet> </router-outlet>
-
     </mat-drawer>
 
-
     <div class="example-content">
-        <div class="container text-center">
-            <a href=""> <img alt="logo" src="../assets/img/logo.png"> </a>
-        </div>
+        <main>
+            <router-outlet> </router-outlet>
+        </main>
     </div> 
     
 </mat-drawer-container> 

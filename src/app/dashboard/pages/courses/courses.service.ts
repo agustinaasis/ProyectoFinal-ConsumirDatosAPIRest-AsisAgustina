@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core'
 import { Course } from './models';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable ({ providedIn: 'root'})
 export class CoursesService {
+
+    constructor() { 
+
+        this.sendNotification$.subscribe({
+          next: (message) => alert(message)
+        })
+      }
+    
 
 courses: Course[] = [
     {
@@ -37,4 +45,8 @@ editCourses$ (id: number, payload: Course) : Observable < Course []>{
     this.courses.push(payload);
     return of (this.courses.map((c) => c.id === id ? { ...c, ...payload } : c))
 }
+
+
+private sendNotification$ = new Subject <string>();
+
 }

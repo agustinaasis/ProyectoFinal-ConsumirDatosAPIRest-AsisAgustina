@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../models';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,5 +19,11 @@ deleteUser = new EventEmitter<number>();
 @Output()
 editUser = new EventEmitter<User>();
 
-displayedColumns = ['id', 'fullname', 'email', 'actions']
+displayedColumns = ['id', 'fullname', 'email', 'actions'];
+
+constructor(private router : Router) {}
+goToDetail (userId: number) : void {
+  this.router.navigate(['dashboard', 'users', 'detail', userId] );
+}
+
 }
