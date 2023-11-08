@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -31,6 +32,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
     FullnamePipe,
     MatTableModule,
     FormErrorsPipe,
+    MatCardModule,
 
   ]
 })

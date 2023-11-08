@@ -1,11 +1,20 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
+import { map } from 'rxjs';
+import { AuthService } from 'src/app/auth/services/auth.service';
+
+
+
 
 export const dashboardGuard: CanActivateFn = (route, state) => {
 
     const router = inject (Router);
-    const tokenValid = false;
 
-    return tokenValid ? router.createUrlTree(['/home']) : true;
+    const authService = inject (AuthService);
 
+    return authService.authUser$.pipe(
+        map((user) => {
+            return !!user ? true : router.createUrlTree(['/auth/login']);
+        })
+    )
 };

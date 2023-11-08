@@ -13,13 +13,14 @@ const routes: Routes = [
           loadChildren: () =>
             import('./pages/login/login.module').then((m) => m.LoginModule),
         },
+        
+        {
+          path: ' ** ',
+          redirectTo: 'login',
+        },
       ]
     },
 
-    {
-        path: '**',
-        redirectTo: 'login',
-    },
 
 ];
 
