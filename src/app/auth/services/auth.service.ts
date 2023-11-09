@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map, of } from 'rxjs';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.local';
+import { LoginPayload } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -13,20 +15,52 @@ private _authUser$ = new BehaviorSubject <User | null > (null);
 
 public authUser$ = this._authUser$.asObservable();
   
-    constructor () { }
+    constructor (private httpClient: HttpClient, private router: Router ) { }
 
-    login() : Observable<User> {
-        
-        const user: User = {
-            id: 5,
-            name: 'test',
-            lastName: 'Asis',
-            email: 'test@mail.com',
-        };
+    login( payload: LoginPayload ) : void {
 
-        this._authUser$.next(user);
 
-        return of <User>(user)
+      const baseUrl = ' http://localhost:3000 ' ;
 
+      this.httpClient.get<User[]>( `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`
+      ) .subscribe({
+        next: (response) => {
+          if (!response.length) {
+            alert ('Usuario o contraseña inválidos')
+          } else {
+
+            const authUser = response [0];
+            this._authUser$.next(authUser);
+            localStorage.setItem('token', authUser.token)
+            this.router.navigate (['/dashboard/home'])
+          }
+        },
+      })
 }
+
+verifyToken(): Observable <boolean> {
+  return this.httpClient.get<User[]>(
+     `${environment.baseUrl}/users?token = ${localStorage.getItem('token')}`
+  ).pipe(
+    map (( users ) => {
+      if (!users.length) {
+        return false;
+      } else {
+
+        const authUser = users [0];
+        this._authUser$.next(authUser);
+        localStorage.setItem('token', authUser.token)
+
+        return true;
+      }
+    })
+  );
+}
+
+logout() : void {
+  this._authUser$.next(null);
+  localStorage.removeItem('token');
+  this.router.navigate(['/auth/login']);
+}
+
 }

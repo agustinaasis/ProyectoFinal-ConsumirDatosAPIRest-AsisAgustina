@@ -18,24 +18,24 @@ export class UsersService {
 
 
   private users: User[] = [
-    {
-      id: 1,
-      name: 'Juan',
-      lastName: 'Perez',
-      email: 'juan@mail.com',
-    },
-    {
-      id: 2,
-      name: 'Marta',
-      lastName: 'Rodriguez',
-      email: 'marta@mail.com',
-    },
-    {
-      id: 3,
-      name: 'Mercedes',
-      lastName: 'Suarez',
-      email: 'mercedes@mail.com',
-    },
+    // {
+    //   id: 1,
+    //   name: 'Juan',
+    //   lastName: 'Perez',
+    //   email: 'juan@mail.com',
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Marta',
+    //   lastName: 'Rodriguez',
+    //   email: 'marta@mail.com',
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Mercedes',
+    //   lastName: 'Suarez',
+    //   email: 'mercedes@mail.com',
+    // },
   ];
 
 
