@@ -10,8 +10,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
 
-emailControl = new FormControl(null, [Validators.required, Validators.email]);
-passwordControl = new FormControl(null, [Validators.required]);
+emailControl = new FormControl(' ', [Validators.required, Validators.email]);
+passwordControl = new FormControl(' ', [Validators.required]);
 
 loginForm = new FormGroup({
   email: this.emailControl,
@@ -28,7 +28,6 @@ loginForm = new FormGroup({
     if(this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
     } else {
-
       console.log(this.loginForm.value)
           this.authService.login(this.loginForm.getRawValue())
       }
