@@ -40,7 +40,7 @@ public authUser$ = this._authUser$.asObservable();
 
 verifyToken(): Observable <boolean> {
   return this.httpClient.get<User[]>(
-     `${environment.baseUrl}/users?token = ${localStorage.getItem('token')}`
+    `${environment.baseUrl}/users?token = ${localStorage.getItem('token')}`
   ).pipe(
     map (( users ) => {
       if (!users.length) {

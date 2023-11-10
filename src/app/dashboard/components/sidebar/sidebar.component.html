@@ -1,15 +1,26 @@
+<div class="container text-center sesion-usuario ">
+        <p class="sesion-usuario-text">
+            {{ (fullName$ | async) }}
+
+            <br>
+            
+            {{ (email$ | async) }}
+        </p>
+        
+</div>
+
 <mat-nav-list class="sidenav-styles">
     
     <mat-list-item  routerLink="/dashboard/home">
-        <a class="sidenav-text-styles">Inicio</a>
+        <a class="sidenav-text-styles  text-center">Inicio</a>
     </mat-list-item>
 
     <mat-list-item  routerLink="/dashboard/courses">
-        <a class="sidenav-text-styles">Cursos</a>
+        <a class="sidenav-text-styles  text-center">Cursos</a>
     </mat-list-item>
 
     <mat-list-item routerLink="/dashboard/users">
-        <a class="sidenav-text-styles">Usuarios</a>
+        <a class="sidenav-text-styles  text-center">Usuarios</a>
     </mat-list-item>
 
     <mat-list-item (click)="logout()">
