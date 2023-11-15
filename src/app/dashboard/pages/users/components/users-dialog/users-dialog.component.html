@@ -35,6 +35,19 @@
                 {{ userForm.get ("email")?.errors | formErrors }}
             </mat-error>
         </mat-form-field>
+
+        <div class="col-6">
+            <mat-form-field>
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" matInput />
+                <mat-error>
+                    {{ userForm.get ("password")?.errors | formErrors }}
+                </mat-error>
+            </mat-form-field>
+            </div>
+
+
+
         </div>
     </div>
     </form>

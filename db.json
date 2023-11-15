@@ -1,13 +1,32 @@
 {
-"users": [
+  "users": [
     {
-    "name": "admin",
-    "lastName": "admin",
-    "email": "fake@mail.com",
-    "password": "123456",
-    "token": "wmfd12541dssef985sdf",
-    "role": "ADMIN",
-    "id": 1
+      "name": "Juan",
+      "lastName": "Perez",
+      "email": "fake@mail.com",
+      "password": "123456",
+      "token": "wmfd12541dssef985sdf",
+      "role": "ADMIN",
+      "id": 1
+    },
+    {
+      "name": "Pedro",
+      "lastName": "Dominguez",
+      "email": "fake@mail.com",
+      "password": "123456",
+      "token": "wrhbf87bdf552dfegSA",
+      "role": "ADMIN",
+      "id": 2
+    },
+    {
+      "name": "María",
+      "lastName": "Alvarez",
+      "email": "fake@mail.com",
+      "password": "123456",
+      "token": "asdwhjnsa78211vhjbdnks25sa",
+      "role": "ADMIN",
+      "id": 3
     }
-]
+
+  ]
 }

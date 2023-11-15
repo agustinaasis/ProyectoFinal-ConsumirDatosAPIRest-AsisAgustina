@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from './users/models';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, concatMap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.local';
 
 
 @Injectable({
@@ -9,59 +11,30 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 export class UsersService {
 
-  constructor() { 
+  constructor(private httpClient: HttpClient) { }
 
-    this.sendNotification$.subscribe({
-      next: (message) => alert(message)
-    })
+  getUsers(): Observable<User[]>{
+    return this.httpClient.get<User[]>(`${environment.baseUrl}/users`);
   }
 
 
-  private users: User[] = [
-    {
-      id: 1,
-      name: 'Juan',
-      lastName: 'Perez',
-      email: 'juan@mail.com',
-      password:'',
-      token:'',
-      role: 'ADMIN',
-    },
-    {
-      id: 2,
-      name: 'Marta',
-      lastName: 'Rodriguez',
-      email: 'marta@mail.com',
-      password:'',
-      token:'',
-      role: 'ADMIN',
-    },
-    {
-      id: 3,
-      name: 'Mercedes',
-      lastName: 'Suarez',
-      email: 'mercedes@mail.com',
-      password:'',
-      token:'',
-      role: 'ADMIN',
-    },
-  ];
-
-
-
-private sendNotification$ = new Subject <string>();
-
-private users$ = new BehaviorSubject <User[]> ([]);
-
-
-  loadUsers(): void {
-    this.users$.next(this.users)
+createUser(payload: User): Observable<User[]> {
+    return this.httpClient.post<User>(`${environment.baseUrl}/users`, payload).pipe(concatMap(() => this.getUsers()));
   }
 
 
-  getUsers(): Subject<User[]>{
-      return this.users$
-    }
+
+updateUser(userId: number, payload: User) : Observable<User[]>{
+  return this.httpClient.put<User[]>(`${ environment.baseUrl}/users/${userId}`, payload).pipe(concatMap(() => this.getUsers()));
+}
+
+
+deleteUser (userId: number) : Observable<User[]> {
+  return this.httpClient.delete<Object>(`${environment.baseUrl}/users/${userId}`).pipe(
+    concatMap(() => this.getUsers())
+  );
+}
+
 
   }
 

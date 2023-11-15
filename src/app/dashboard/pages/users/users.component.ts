@@ -15,63 +15,55 @@ import { Observable, filter, map, of, tap } from 'rxjs';
 export class UsersComponent {
   userName = ' ' ;
 
-users: User[] = [];
+  users$: Observable <User[]> ;
 
 constructor(
   private matDialog : MatDialog,
   private usersService: UsersService,
+  ) {
+  this.users$ = this.usersService.getUsers();
 
-  ){
-    this.usersService.getUsers();
-    this.usersService.loadUsers();
-
-    this.usersService.getUsers().subscribe({
-      next: (v) => {
-        this.users = v;
-      }
-    })
   }
 
 
-openUsersDialog(): void {
-  this.matDialog.open(UsersDialogComponent)
+addUser(): void {
+  this.matDialog
+    .open(UsersDialogComponent)
+    .afterClosed()
+    .subscribe({
+      next: (v) => {
+        if (!!v) {
+            this.users$ = this.usersService.createUser(v);
+            }
+          },
+        });
+      }
+
+onEditUser(user: User): void {
+  this.matDialog
+  .open(UsersDialogComponent, {
+    data: user,
+  })
   .afterClosed()
   .subscribe({
-    next:(v) => {
-      console.log('VALOR: ', v);
-      if (!!v){
-
-        this.users = [
-          ...this.users,
-          {
-            ... v,
-            id: new Date().getTime(),
-          }
-        ]
-      }
-    }
-  })
-}
-
-onEditUser (user: User): void {
-  this.matDialog.open(UsersDialogComponent, { data : user, }).afterClosed().subscribe({
     next: (v) => {
-      if (!!v){
-        const arrayNuevo = [ ...this.users];
-        const indexToEdit = arrayNuevo.findIndex((u) => u.id === user.id);
-        arrayNuevo[indexToEdit] = { ...arrayNuevo[indexToEdit], ...v};
-        this.users = [ ...arrayNuevo ];
-      }
-    }
-  });
-
+      if (!!v) {
+        this.users$ = this.usersService.updateUser(user.id, v);
+    
+        }
+      },
+    })
 }
 
-onDeleteUser (userId: number) : void {
-  if (confirm('¿Está seguro de eliminar este usuario?')) {
-    this.users = this.users.filter((u) => u.id !== userId );
+
+
+onDeleteUser(userId: number): void {
+  if (confirm('Esta seguro?')) {
+    this.users$ = this.usersService.deleteUser(userId);
+    // this.users = this.users.filter((u) => u.id !== userId);
   }
 }
 }
+
 
 
