@@ -58,9 +58,8 @@ onEditUser(user: User): void {
 
 
 onDeleteUser(userId: number): void {
-  if (confirm('Esta seguro?')) {
+  if (confirm('¿Estás seguro de eliminar este Usuario?')) {
     this.users$ = this.usersService.deleteUser(userId);
-    // this.users = this.users.filter((u) => u.id !== userId);
   }
 }
 }

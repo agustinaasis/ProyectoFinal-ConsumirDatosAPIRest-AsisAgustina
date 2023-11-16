@@ -13,7 +13,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUsers(): Observable<User[]>{
+getUsers(): Observable<User[]>{
     return this.httpClient.get<User[]>(`${environment.baseUrl}/users`);
   }
 
@@ -21,7 +21,6 @@ export class UsersService {
 createUser(payload: User): Observable<User[]> {
     return this.httpClient.post<User>(`${environment.baseUrl}/users`, payload).pipe(concatMap(() => this.getUsers()));
   }
-
 
 
 updateUser(userId: number, payload: User) : Observable<User[]>{

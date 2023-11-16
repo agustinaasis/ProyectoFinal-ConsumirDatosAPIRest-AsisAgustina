@@ -10,23 +10,22 @@
       "id": 1
     },
     {
-      "name": "Pedro",
+      "id": 2,
+      "name": "Pedro ",
       "lastName": "Dominguez",
-      "email": "fake@mail.com",
+      "email": "pedrodominguez@mail.com",
       "password": "123456",
       "token": "wrhbf87bdf552dfegSA",
-      "role": "ADMIN",
-      "id": 2
+      "role": "ADMIN"
     },
     {
+      "id": 3,
       "name": "María",
       "lastName": "Alvarez",
-      "email": "fake@mail.com",
+      "email": "mariaalvarez@mail.com",
       "password": "123456",
-      "token": "asdwhjnsa78211vhjbdnks25sa",
-      "role": "ADMIN",
-      "id": 3
+      "token": "pofjkanc9878523vdsc",
+      "role": "ADMIN"
     }
-
   ]
 }

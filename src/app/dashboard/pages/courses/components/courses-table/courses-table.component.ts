@@ -19,6 +19,6 @@ export class CoursesTableComponent {
   editCourse = new EventEmitter<Course>();
 
 
-  displayedColumns = ['id', 'name', 'length', 'actions']
+  displayedColumns = ['id', 'name', 'length', 'teacherName', 'actions']
   
 }

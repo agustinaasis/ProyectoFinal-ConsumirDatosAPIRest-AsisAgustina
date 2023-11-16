@@ -1,7 +1,7 @@
 <h1> USUARIOS </h1>
 
 <app-users-table
-  [dataSource]="(users$ | async) || []",
+  [dataSource]="(users$ | async) || []"
   (editUser)="onEditUser($event)"
   (deleteUser)="onDeleteUser($event)"
 ></app-users-table>

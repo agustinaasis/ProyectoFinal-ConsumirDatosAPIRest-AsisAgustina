@@ -12,12 +12,15 @@ export class CoursesDialogComponent {
   idControl = new FormControl();
   nameControl = new FormControl();
   lengthControl = new FormControl();
+  teacherNameControl = new FormControl();
 
 courseForm = new FormGroup ({
 
     id: this.idControl,
     name: this.nameControl,
     length: this.lengthControl,
+    teacherName: this.teacherNameControl,
+
   });
 
   constructor(private matDialogRef: MatDialogRef<CoursesDialogComponent> ) { }
