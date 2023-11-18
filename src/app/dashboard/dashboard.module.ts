@@ -14,8 +14,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 
+
 @NgModule({
-  declarations: [ DashboardComponent, ToolbarComponent, SidebarComponent, ],
+  declarations: [ DashboardComponent, ToolbarComponent, SidebarComponent,],
   imports: [ CommonModule,
             MatSidenavModule,
             MatButtonModule,
@@ -25,6 +26,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
             SharedModule,
             MatListModule,
             DashboardRoutingModule,
+            
             ],
 
   exports:[ DashboardComponent],

@@ -8,39 +8,39 @@ import { DashboardComponent } from './dashboard.component';
 @NgModule({
     imports : [
 
-        RouterModule.forChild ([
+    RouterModule.forChild ([
+        {
+            component: DashboardComponent,
+            path: '',
+            children: [
+            
             {
-                path: '',
-                component: DashboardComponent,
-                children: [
+                    path: 'home',
+                    component: HomeComponent,
+                },
 
-                    {
-                        path: 'home',
-                        component: HomeComponent,
-                    },
+                {
+                    path: 'courses',
 
-                    {
-                        path: 'courses',
+                    loadChildren: () =>import('./pages/courses/courses.module').then((m) => m.CoursesModule),
+                },
 
-                        loadChildren: () =>import('./pages/courses/courses.module').then((m) => m.CoursesModule),
-                    },
+                {
+                    path: 'users',
 
-                    {
-                        path: 'users',
+                    loadChildren : () => import('./pages/users/users.module').then((m) => m.UsersModule),
+                },
 
-                        loadChildren : () => import('./pages/users/users.module').then((m) => m.UsersModule),
-                    },
+                {
+                    path: '**',
+                    redirectTo: 'home'
+                },
 
-                    {
-                        path: '**',
-                        redirectTo: 'home'
-                    },
+            ],
 
-                ],
+        },
 
-            },
-
-        ]),
+    ]),
 ],
 
 exports: [RouterModule],

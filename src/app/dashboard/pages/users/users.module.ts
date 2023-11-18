@@ -18,7 +18,7 @@ import { UsersService } from '../users.service';
     UserDetailComponent,
   ],
   imports: [CommonModule, SharedModule, UsersRoutingModule, RouterModule, MatButtonModule],
-  exports: [UsersComponent],
+  exports: [UsersComponent, UserDetailComponent],
 
   providers: [
     UsersService,
