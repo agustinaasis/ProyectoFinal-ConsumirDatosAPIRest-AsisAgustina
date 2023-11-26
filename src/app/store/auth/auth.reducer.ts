@@ -3,7 +3,7 @@ import { AuthActions } from "./auth.actions";
 import { createReducer, on } from "@ngrx/store";
 
 
-export const authFeatureName= 'auth';
+export const authFeatureName = 'auth';
 
 export interface State {
     authUser: User | null;

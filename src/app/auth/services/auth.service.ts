@@ -14,8 +14,6 @@ import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 })
 export class AuthService {
 
-
-
 public authUser$ = this.store.select(selectAuthUser);
   
     constructor (
@@ -25,14 +23,12 @@ public authUser$ = this.store.select(selectAuthUser);
 
 
 private handleAuthUser (authUser: User) : void {
-  this.store.dispatch(AuthActions.setAuthUser({data:authUser }));
-  localStorage.setItem('token', authUser.token)
+  this.store.dispatch(AuthActions.setAuthUser({ data : authUser }));
+  localStorage.setItem('token', authUser.token);
 }
 
+
     login( payload: LoginPayload ) : void {
-
-
-      const baseUrl = ' http://localhost:3000 ' ;
 
       this.httpClient.get<User[]>( `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`
       ) .subscribe({

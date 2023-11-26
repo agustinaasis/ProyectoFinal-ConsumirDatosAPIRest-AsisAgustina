@@ -11,15 +11,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
 
 emailControl = new FormControl('', [Validators.required, Validators.email]);
-passwordControl = new FormControl('', Validators.required);
+passwordControl = new FormControl('', [Validators.required]);
 
 loginForm = new FormGroup({
   email: this.emailControl,
   password: this.passwordControl,
 })
-
-
-
 
   constructor (private authService: AuthService, private router: Router) {}
 
@@ -27,10 +24,13 @@ loginForm = new FormGroup({
 
     if(this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
+    } if(this.loginForm.invalid) {
+      alert ('Usuario o contraseña inválidos');
     } else {
-          this.authService.login(this.loginForm.getRawValue())
+          this.authService.login(this.loginForm.getRawValue());
       }
 
   }
 
 }
+

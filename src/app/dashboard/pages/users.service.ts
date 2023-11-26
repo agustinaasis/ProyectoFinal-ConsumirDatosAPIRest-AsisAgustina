@@ -19,7 +19,7 @@ getUsers(): Observable<User[]>{
 
 
 createUser(payload: User): Observable<User[]> {
-    return this.httpClient.post<User>(`${environment.baseUrl}/users`, payload).pipe(concatMap(() => this.getUsers()));
+    return this.httpClient.post<User[]>(`${environment.baseUrl}/users`, payload).pipe(concatMap(() => this.getUsers()));
   }
 
 

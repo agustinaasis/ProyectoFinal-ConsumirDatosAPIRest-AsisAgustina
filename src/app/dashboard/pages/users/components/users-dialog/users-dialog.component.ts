@@ -15,16 +15,17 @@ export class UsersDialogComponent {
   constructor (
     private fb: FormBuilder, 
     private matDialogRef: MatDialogRef<UsersDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public user? : User
+    @Inject(MAT_DIALOG_DATA) public user? : User,
   ) {
     this.userForm = this.fb.group({
+
       id: ['', Validators.required],
       name: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email ]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       token: ['', Validators.required],
-      role: ['', Validators.required],
+      role: ['', Validators.required]
     });
 
     if (this.user) {
@@ -39,5 +40,11 @@ onSubmit(): void {
     this.matDialogRef.close(this.userForm.value);
   }
 }
+
+
+
+
+
+
 
 }

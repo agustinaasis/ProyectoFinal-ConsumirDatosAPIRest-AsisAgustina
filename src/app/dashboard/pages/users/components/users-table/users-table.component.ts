@@ -6,9 +6,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-users-table',
   templateUrl: './users-table.component.html',
-  styles: [
-  ]
+  styles: []
 })
+
+
 export class UsersTableComponent {
 @Input()
 dataSource: User[] = [];
@@ -19,11 +20,22 @@ deleteUser = new EventEmitter<number>();
 @Output()
 editUser = new EventEmitter<User>();
 
-displayedColumns = ['id', 'fullname', 'email', 'token','actions'];
+displayedColumns = ['id', 'fullname', 'email', 'token', 'actions'];
 
 constructor(private router : Router) {}
-goToDetail (userId: number) : void {
-  this.router.navigate(['dashboard', 'users', 'detail', userId] );
+
+goToDetail(userId: number): void {
+  this.router.navigate(
+    [
+      'dashboard',
+      'users',
+      'detail',
+      userId,
+    ],
+
+  );
+}
 }
 
-}
+
+

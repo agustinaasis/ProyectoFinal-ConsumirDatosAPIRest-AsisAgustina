@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "name": "Juan",
+      "id": 1,
+      "name": "Juan ",
       "lastName": "Perez",
       "email": "fake@mail.com",
       "password": "123456",
       "token": "wmfd12541dssef985sdf",
-      "role": "ADMIN",
-      "id": 1
+      "role": "ADMIN"
     },
     {
       "id": 2,

@@ -49,13 +49,10 @@ onEditUser(user: User): void {
     next: (v) => {
       if (!!v) {
         this.users$ = this.usersService.updateUser(user.id, v);
-    
         }
       },
     })
 }
-
-
 
 onDeleteUser(userId: number): void {
   if (confirm('¿Estás seguro de eliminar este Usuario?')) {

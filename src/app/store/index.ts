@@ -8,6 +8,7 @@ export interface AppState {
 };
 
 export const appReducer: ActionReducerMap<any> = {
-    [authFeatureName] : authReducer
+
+    [authFeatureName] : authReducer,
 };
 

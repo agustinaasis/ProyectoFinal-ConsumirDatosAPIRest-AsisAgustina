@@ -5,7 +5,7 @@ function generarStringRandom (longitud: number) : string {
 
 
 
-    for (let i =0; i < longitud; i++) {
+    for (let i = 0; i < longitud; i++) {
         const indice = Math.floor(Math.random() * caracteres.length);
         resultado+= caracteres.charAt(indice);
     }

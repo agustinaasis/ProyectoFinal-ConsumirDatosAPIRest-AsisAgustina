@@ -67,6 +67,19 @@
             </mat-form-field>
         </div>
 
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label> Rol </mat-label>
+                <input formControlName="role" matInput />
+                <mat-error>
+                    {{ userForm.get ("password")?.errors | formErrors }}
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+
+
+
     </div>
     </form>
 </div>
