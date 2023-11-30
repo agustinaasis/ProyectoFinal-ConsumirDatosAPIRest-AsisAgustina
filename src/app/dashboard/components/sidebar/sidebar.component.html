@@ -1,10 +1,12 @@
-<div class="container text-center sesion-usuario ">
+<div class="container text-center sesion-usuario">
+
         <p class="sesion-usuario-text">
-            {{ (fullName$ | async) }}
+            
+            {{ fullName$ | async }}
 
             <br>
             
-            {{ (email$ | async) }}
+            {{ email$ | async }}
         </p>
         
 </div>
@@ -14,18 +16,21 @@
     <mat-list-item  routerLink="/dashboard/home">
         <a class="sidenav-text-styles  text-center">Inicio</a>
     </mat-list-item>
+    
+    <mat-list-item routerLink="/dashboard/users">
+        <a class="sidenav-text-styles  text-center">Usuarios</a>
+    </mat-list-item>
+
+    <mat-list-item routerLink="/dashboard/enrollments">
+        <a class="sidenav-text-styles  text-center">Inscripciones</a>
+    </mat-list-item>
 
     <mat-list-item  routerLink="/dashboard/courses">
         <a class="sidenav-text-styles  text-center">Cursos</a>
     </mat-list-item>
 
-    <mat-list-item routerLink="/dashboard/users">
-        <a class="sidenav-text-styles  text-center">Usuarios</a>
-    </mat-list-item>
-
     <mat-list-item (click)="logout()">
         <button mat-flat-button color="primary"> Cerrar sesión </button>
-        
     </mat-list-item>
 
 </mat-nav-list>

@@ -20,7 +20,7 @@ deleteUser = new EventEmitter<number>();
 @Output()
 editUser = new EventEmitter<User>();
 
-displayedColumns = ['id', 'fullname', 'email', 'token', 'actions'];
+displayedColumns = ['id', 'fullname', 'email', 'role', 'actions'];
 
 constructor(private router : Router) {}
 

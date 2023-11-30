@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { User } from './users/models';
-import { BehaviorSubject, Observable, Subject, concatMap } from 'rxjs';
+import { Observable, concatMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.local';
 
 
 @Injectable({
-  providedIn: 'root'  
+  providedIn: 'root' ,
 })
 
 export class UsersService {

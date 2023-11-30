@@ -10,26 +10,10 @@ export class CoursesService {
         this.sendNotification$.subscribe({
           next: (message) => alert(message)
         })
-      }
+    }
     
 
 courses: Course[] = [
-    {
-        id: 1,
-        name: 'JavaScript',
-        length: '5 meses',
-    },
-    {
-        id: 2,
-        name: 'Angular',
-        length: '4 meses',
-    },
-    {
-        id: 3,
-        name: 'React',
-        length: '4 meses',
-    },
-
 ];
 
 getCourses$(): Observable <Course[]> {
