@@ -35,50 +35,59 @@
       "password": "123456",
       "token": "woiñthjgkm789523gdsegf2",
       "role": "STUDENT"
+    },
+    {
+      "id": 5,
+      "name": "Florencia",
+      "lastName": "Navarro",
+      "email": "flornavarro@mail.com",
+      "password": "123456",
+      "token": "po9876451dfasclñd23sd5f",
+      "role": "STUDENT"
     }
   ],
-
-
-  
   "courses": [
     {
       "id": 1,
       "name": "JavaScript",
       "length": "5 meses"
-  },
-  {
+    },
+    {
       "id": 2,
       "name": "Angular",
       "length": "4 meses"
-  },
-  {
+    },
+    {
       "id": 3,
       "name": "React",
       "length": "4 meses"
-  },
-  {
-    "id": 4,
-    "name": "Desarrollo Web",
-    "length": "10 meses"
-}
-
+    },
+    {
+      "id": 4,
+      "name": "Desarrollo Web",
+      "length": "10 meses"
+    }
   ],
-
-  "enrollments":[ 
-  {
-    "id" : 1,
-    "courseId": 4,
-    "userId": 4  
-  },
-  {
-    "id" : 2,
-    "courseId": 4,
-    "userId": 2  
-  }
-
+  "enrollments": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "userId": 5
+    },
+    {
+      "id": 2,
+      "courseId": 4,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "courseId": 3,
+      "userId": 4
+    },
+    {
+      "courseId": 2,
+      "userId": 4,
+      "id": 4
+    }
   ]
-
-
-
-
 }

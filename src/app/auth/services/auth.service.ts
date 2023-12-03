@@ -33,12 +33,15 @@ private handleAuthUser (authUser: User) : void {
       this.httpClient.get<User[]>( `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`
       ) .subscribe({
         next: (response) => {
-          if (!response.length) {
+          
+          const authUser = response [0];
+
+
+          if (!authUser) {
             alert ('Usuario o contraseña inválidos')
+          } else if ( authUser?.role === 'STUDENT' ){
+            alert ('No tienes permiso para acceder');
           } else {
-
-            const authUser = response [0];
-
             this.handleAuthUser(authUser);
           
             this.router.navigate (['/dashboard/home'])

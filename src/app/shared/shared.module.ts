@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { MatCardModule } from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -33,6 +34,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     FormErrorsPipe,
     MatCardModule,
+    MatSelectModule,
 
   ]
 })
