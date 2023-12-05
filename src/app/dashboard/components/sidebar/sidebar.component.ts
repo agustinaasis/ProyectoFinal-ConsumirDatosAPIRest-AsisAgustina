@@ -11,7 +11,7 @@ import { User } from '../../pages/users/models';
 
 
 export class SidebarComponent {
-  public authUser$: Observable<User | null>;
+  public authUser$: Observable < User | null >;
 
   constructor(private authService: AuthService) {
     this.authUser$ = this.authService.authUser$;
@@ -21,12 +21,18 @@ export class SidebarComponent {
     return this.authUser$.pipe(
       map((user) => `${user?.name} ${user?.lastName}`)
     );
-
-    
   }
+
   get email$(): Observable<string | undefined> {
     return this.authUser$.pipe(map((user) => user?.email));
   }
+
+
+  get role$(): Observable<string | undefined> {
+    return this.authUser$.pipe(map((user) => user?.role));
+  }
+
+  
 
   logout(): void {
     this.authService.logout();

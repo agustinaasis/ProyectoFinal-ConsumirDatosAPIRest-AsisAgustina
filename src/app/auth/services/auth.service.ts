@@ -28,7 +28,7 @@ private handleAuthUser (authUser: User) : void {
 }
 
 
-    login( payload: LoginPayload ) : void {
+    login (payload: LoginPayload ) : void {
 
       this.httpClient.get<User[]>( `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`
       ) .subscribe({
@@ -58,10 +58,8 @@ verifyToken(): Observable <boolean> {
       if (!users.length) {
         return false;
       } else {
-
         const authUser = users [0];
         this.handleAuthUser(authUser);
-
         return true;
       }
     })

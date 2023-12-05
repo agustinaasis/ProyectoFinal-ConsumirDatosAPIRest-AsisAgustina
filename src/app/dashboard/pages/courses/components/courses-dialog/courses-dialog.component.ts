@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Course } from '../../models';
 
 @Component({
   selector: 'app-courses-dialog',
@@ -23,7 +24,15 @@ courseForm = new FormGroup ({
 
   });
 
-  constructor(private matDialogRef: MatDialogRef<CoursesDialogComponent> ) { }
+  constructor(private matDialogRef: MatDialogRef<CoursesDialogComponent> , @Inject(MAT_DIALOG_DATA) private course?: Course) { 
+
+    
+  if (this.course) {
+    this.courseForm.patchValue(this.course);
+  }
+
+
+  }
 
   onSubmit(): void {
     if (this.courseForm.invalid) {
@@ -31,6 +40,7 @@ courseForm = new FormGroup ({
     }else {
       this.matDialogRef.close(this.courseForm.value);
     }
-  }
+  };
+
 
 }

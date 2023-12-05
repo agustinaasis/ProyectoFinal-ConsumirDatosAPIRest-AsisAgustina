@@ -1,32 +1,31 @@
 <div class="container text-center sesion-usuario">
-
-        <p class="sesion-usuario-text">
+    <p class="sesion-usuario-text">
             
-            {{ fullName$ | async }}
-
-            <br>
-            
-            {{ email$ | async }}
-        </p>
+        {{ fullName$ | async }}
+        <br>
+        {{ email$ | async }}
+        <br>
+        {{ role$ | async }}
+    </p>
         
 </div>
 
 <mat-nav-list class="sidenav-styles">
     
     <mat-list-item  routerLink="/dashboard/home">
-        <a class="sidenav-text-styles  text-center">Inicio</a>
+        <a class="sidenav-text-styles  text-center"> Inicio </a>
     </mat-list-item>
     
     <mat-list-item routerLink="/dashboard/users">
-        <a class="sidenav-text-styles  text-center">Usuarios</a>
+        <a class="sidenav-text-styles  text-center"> Usuarios </a>
     </mat-list-item>
 
     <mat-list-item routerLink="/dashboard/enrollments">
-        <a class="sidenav-text-styles  text-center">Inscripciones</a>
+        <a class="sidenav-text-styles  text-center"> Inscripciones </a>
     </mat-list-item>
 
     <mat-list-item  routerLink="/dashboard/courses">
-        <a class="sidenav-text-styles  text-center">Cursos</a>
+        <a class="sidenav-text-styles  text-center"> Cursos </a>
     </mat-list-item>
 
     <mat-list-item (click)="logout()">

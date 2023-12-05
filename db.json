@@ -2,12 +2,12 @@
   "users": [
     {
       "id": 1,
-      "name": "Juan ",
-      "lastName": "Perez",
-      "email": "fake@mail.com",
+      "name": "María",
+      "lastName": "Alvarez",
+      "email": "mariaalvarez@mail.com",
       "password": "123456",
-      "token": "wmfd12541dssef985sdf",
-      "role": "STUDENT"
+      "token": "pofjkanc9878523vdsc",
+      "role": "ADMIN"
     },
     {
       "id": 2,
@@ -20,12 +20,12 @@
     },
     {
       "id": 3,
-      "name": "María",
-      "lastName": "Alvarez",
-      "email": "mariaalvarez@mail.com",
+      "name": "Juan ",
+      "lastName": "Perez",
+      "email": "fake@mail.com",
       "password": "123456",
-      "token": "pofjkanc9878523vdsc",
-      "role": "ADMIN"
+      "token": "wmfd12541dssef985sdf",
+      "role": "STUDENT"
     },
     {
       "id": 4,
@@ -44,28 +44,6 @@
       "password": "123456",
       "token": "po9876451dfasclñd23sd5f",
       "role": "STUDENT"
-    }
-  ],
-  "courses": [
-    {
-      "id": 1,
-      "name": "JavaScript",
-      "length": "5 meses"
-    },
-    {
-      "id": 2,
-      "name": "Angular",
-      "length": "4 meses"
-    },
-    {
-      "id": 3,
-      "name": "React",
-      "length": "4 meses"
-    },
-    {
-      "id": 4,
-      "name": "Desarrollo Web",
-      "length": "10 meses"
     }
   ],
   "enrollments": [
@@ -88,6 +66,37 @@
       "courseId": 2,
       "userId": 4,
       "id": 4
+    },
+    {
+      "courseId": 1,
+      "userId": 4,
+      "id": 5
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "JavaScript",
+      "length": "5 meses",
+      "teacherName": "Marcos Duarte"
+    },
+    {
+      "id": 2,
+      "name": "Angular",
+      "length": "4 meses",
+      "teacherName": "Susana Díaz"
+    },
+    {
+      "id": 3,
+      "name": "React",
+      "length": "4 meses",
+      "teacherName": "Marta Perez"
+    },
+    {
+      "id": 4,
+      "name": "Desarrollo Web",
+      "length": "10 meses",
+      "teacherName": "Esteban Liniers"
     }
   ]
 }

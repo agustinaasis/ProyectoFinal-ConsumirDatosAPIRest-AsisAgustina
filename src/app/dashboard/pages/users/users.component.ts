@@ -13,14 +13,12 @@ import { Observable, filter, map, of, tap } from 'rxjs';
 })
 
 export class UsersComponent {
+
   userName = ' ' ;
 
   users$: Observable <User[]> ;
 
-constructor(
-  private matDialog : MatDialog,
-  private usersService: UsersService,
-  ) {
+constructor(private matDialog : MatDialog, private usersService: UsersService) {
   this.users$ = this.usersService.getUsers();
 
   }
